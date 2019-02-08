@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<style>
+		.anim{
+			background-color:chartreuse;
+			height: 100px;
+			width: 200px;
+			position: absolute;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			$('p').on({
+				mouseenter: function(){
+					$(this).css("background-color", "lightgray");
+				},
+				mouseleave: function(){
+					$(this).css("background-color", "black");
+				},
+				click: function(){
+					$(this).css("background-color", "blue");
+				}
+			});
+			$('button').click(function(){
+				var div = $('.anim');
+				div.animate({left: '300px'}, "slow");
+				div.animate({fontSize: '50px'}, "slow");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<p>test</p>
+		<p>test</p>
+		<p>test</p>
+		<button class="m-4">start animation</button>
+		<div class="anim">Hello</div>
+	</div>
+</body>
+</html>

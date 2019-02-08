@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+      <p id="deb1"></p>
+      <p id="demo"></p>
+      <p id="demo1"></p>
+      <p id="demo2"></p>
+      <button class="btn btn-primary" onclick="document.getElementById('demo1').innerHTML = Date()">the time is?</button>
+      <button class="btn btn-primary" onclick="this.innerHTML = Date()">this btn</button>
+      <button class="btn btn-primary" onclick="displayDate()">this btn</button>
+      <input type="text" id="in1">
+      <button type="button" onclick="myFunction()">test input</button>
+      <p id="p01"></p>
+  </div>
+    <script>
+      var x = 15 * 5;
+      debugger;
+      document.getElementById('deb1').innerHTML = x;
+      a=5;
+      b=4;
+      c = a + b;
+      console.log(c);
+      function myFunction() {
+        var mess,x;
+        mess = document.getElementById('p01');
+        mess.innerHTML = "";
+        x = document.getElementById('in1').value;
+        try{
+          if (x=="") throw "empty";
+          if (isNaN(x)) throw "not a number";
+          x = Number(x);
+          if (x < 5) throw "too low";
+          if (x > 10) throw "too high";
+        }
+        catch(err){
+          mess.innerHTML = "input is " + err + ".";
+        }
+        finally{
+          document.getElementById('in1').value = "";
+        }
+      }
+      function toCelcius(f){
+        return (5/9) * (f-32);
+      }
+      function displayDate() {
+        document.getElementById('demo2').innerHTML = Date();
+      }
+      document.getElementById("demo").innerHTML = toCelcius(10);
+    </script>
+</body>
+</html>
